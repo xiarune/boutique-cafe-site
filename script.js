@@ -51,6 +51,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            const isActive = document.body.classList.toggle('theme-manuscript');
+            themeToggle.setAttribute('aria-pressed', isActive);
+        });
+    }
+
     // Contact Form Handling
     const contactForm = document.getElementById('contact-form');
 
