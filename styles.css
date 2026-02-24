@@ -1067,3 +1067,10 @@ textarea:focus {
     outline-offset: 2px;
     color: var(--color-cream);
 }
+
+/* Manuscript Mode Theme */
+body.theme-manuscript {
+    background-color: #F5F0E8;
+    color: #1A1208;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
