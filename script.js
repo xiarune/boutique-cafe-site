@@ -51,13 +51,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Theme Toggle
+    // Theme Toggle - restore saved preference on every page
+    if (localStorage.getItem('theme') === 'manuscript') {
+        document.body.classList.add('theme-manuscript');
+    }
+
     const themeToggle = document.getElementById('theme-toggle');
 
     if (themeToggle) {
+        themeToggle.setAttribute('aria-pressed', document.body.classList.contains('theme-manuscript'));
         themeToggle.addEventListener('click', function() {
             const isActive = document.body.classList.toggle('theme-manuscript');
             themeToggle.setAttribute('aria-pressed', isActive);
+            if (isActive) {
+                localStorage.setItem('theme', 'manuscript');
+            } else {
+                localStorage.removeItem('theme');
+            }
         });
     }
 
